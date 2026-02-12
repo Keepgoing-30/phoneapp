@@ -7,8 +7,8 @@ import {
 	SiPython,
 	SiReact,
 	SiTailwindcss,
-	SiVite,
 } from "react-icons/si";
+import { TbApi } from "react-icons/tb"; // Dùng Tabler Icons cho API
 
 // 1. Data Structure: Thêm trường 'percentage' để máy vẽ thanh bar
 const skills = [
@@ -27,7 +27,7 @@ const skills = [
 		level: "Advance",
 	},
 	{ name: "React", icon: <SiReact />, percentage: 80, level: "Advance" },
-	{ name: "Vite", icon: <SiVite />, percentage: 85, level: "Advance" },
+	{ name: "API", icon: <TbApi />, percentage: 85, level: "Advance" },
 	{ name: "Next", icon: <SiNextdotjs />, percentage: 75, level: "Advance" },
 	{ name: "Python", icon: <SiPython />, percentage: 60, level: "Intermediate" },
 ];
@@ -42,8 +42,8 @@ export default function SkillBar() {
 					<div className="flex items-center justify-between mb-2">
 						<div className="flex items-center gap-3">
 							{/* Dùng text-foreground để icon luôn nổi bật */}
-							<span className="text-2xl text-blue-400">{skill.icon}</span>
-							<span className="text-lg font-medium text-foreground">
+							<span className="text-3xl text-rose-400">{skill.icon}</span>
+							<span className="text-lg font-medium text-white text-bold">
 								{skill.name}
 							</span>
 						</div>
@@ -53,9 +53,9 @@ export default function SkillBar() {
 					</div>
 
 					{/* 2. Progressbar: Kết hợp màu Indigo chuẩn Apple */}
-					<div className="h-2 w-full bg-slate-200 dark:bg-slate-400 rounded-full overflow-hidden">
+					<div className="h-2 w-full bg-slate-200 dark:bg-slate-500 rounded-full overflow-hidden">
 						<div
-							className="h-full bg-linear-to-r from-blue-400 to-emerald-400 rounded-full transition-all duration-1000 ease-out"
+							className="h-full bg-sky-600 rounded-full transition-all duration-500 ease-in-out group-hover:bg-green-200"
 							style={{ width: `${skill.percentage}%` }}
 						></div>
 					</div>

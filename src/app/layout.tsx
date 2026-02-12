@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google"; // Import Inter - "Bản sao" hoàn hảo của Apple SF Pro
+import Footer from "./components/footer";
 import Sidebar from "./components/sidebar";
 
 // Cấu hình font Inter
@@ -33,10 +34,12 @@ export default function RootLayout({
 					</div>
 
 					{/* Phần nội dung chính */}
-					<main className="flex-1 pl-15.5 peer-hover:pl-57.5 transition-all duration-300 p-0 text-[#1d1d1f] bg-background">
+					<main className="flex-1 pl-0 p-0 text-[#1d1d1f] bg-background">
 						{children}
 					</main>
 				</div>
+
+				<Footer />
 			</body>
 		</html>
 	);
